@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import { useTranslation } from "react-i18next";
 import { makeStyles } from "tss-react/mui";
 
-import UserSvg from "@assets/images/user.svg?react";
+import UserSvg from "@assets/images/industrialshields.svg?react";
 import AppBarLoginPortal from "@components/AppBarLoginPortal";
 import PrivacyPolicyDrawer from "@components/PrivacyPolicyDrawer";
 import TypographyWithTooltip from "@components/TypographyWithTooltip";
@@ -76,7 +76,7 @@ const useStyles = makeStyles()((theme: Theme) => ({
     },
     icon: {
         margin: theme.spacing(),
-        width: "64px",
+        width: "100px",
         fill: theme.custom.icon,
     },
     body: {

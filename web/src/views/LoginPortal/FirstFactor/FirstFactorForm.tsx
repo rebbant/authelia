@@ -37,8 +37,8 @@ export interface Props {
     disabled: boolean;
     passkeyLogin: boolean;
     rememberMe: boolean;
-    resetPassword: boolean;
-    resetPasswordCustomURL: string;
+    resetPassword?: boolean;
+    resetPasswordCustomURL?: string;
 
     onAuthenticationStart: () => void;
     onAuthenticationStop: () => void;

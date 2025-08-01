@@ -5,12 +5,11 @@ import Grid from "@mui/material/Grid";
 import { useTranslation } from "react-i18next";
 import { makeStyles } from "tss-react/mui";
 
-import UserSvg from "@assets/images/user.svg?react";
+import UserSvg from "@assets/images/industrialshields.svg?react";
 import AppBarLoginPortal from "@components/AppBarLoginPortal";
 import Brand from "@components/Brand";
 import PrivacyPolicyDrawer from "@components/PrivacyPolicyDrawer";
 import TypographyWithTooltip from "@components/TypographyWithTooltip";
-import { EncodedName } from "@constants/constants";
 import { useLanguageContext } from "@contexts/LanguageContext";
 import { Language } from "@models/LocaleInformation";
 import { UserInfo } from "@models/UserInfo";
@@ -63,7 +62,7 @@ const LoginLayout = function (props: Props) {
     }, [fetchLocaleInformation]);
 
     useEffect(() => {
-        document.title = translate("Login - {{authelia}}", { authelia: atob(String.fromCharCode(...EncodedName)) });
+        document.title = translate("Login - TEST");
     }, [translate]);
 
     return (
@@ -131,7 +130,7 @@ const useStyles = makeStyles()((theme: Theme) => ({
     subtitle: {},
     icon: {
         margin: theme.spacing(),
-        width: "64px",
+        width: "100px",
         fill: theme.custom.icon,
     },
     body: {

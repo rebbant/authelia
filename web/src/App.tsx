@@ -10,8 +10,6 @@ import {
     ConsentRoute,
     IndexRoute,
     LogoutRoute,
-    ResetPasswordStep1Route,
-    ResetPasswordStep2Route,
     RevokeOneTimeCodeRoute,
     RevokeResetPasswordRoute,
     SettingsRoute,
@@ -22,13 +20,7 @@ import ThemeContextProvider from "@contexts/ThemeContext";
 import NotificationsContext from "@hooks/NotificationsContext";
 import { Notification } from "@models/Notifications";
 import { getBasePath } from "@utils/BasePath";
-import {
-    getDuoSelfEnrollment,
-    getPasskeyLogin,
-    getRememberMe,
-    getResetPassword,
-    getResetPasswordCustomURL,
-} from "@utils/Configuration";
+import { getDuoSelfEnrollment, getPasskeyLogin, getRememberMe } from "@utils/Configuration";
 import LoadingPage from "@views/LoadingPage/LoadingPage";
 import LoginPortal from "@views/LoginPortal/LoginPortal";
 
@@ -36,8 +28,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const ConsentPortal = lazy(() => import("@views/ConsentPortal/ConsentPortal"));
 const SignOut = lazy(() => import("@views/LoginPortal/SignOut/SignOut"));
-const ResetPasswordStep1 = lazy(() => import("@views/ResetPassword/ResetPasswordStep1"));
-const ResetPasswordStep2 = lazy(() => import("@views/ResetPassword/ResetPasswordStep2"));
 const SettingsRouter = lazy(() => import("@views/Settings/SettingsRouter"));
 const RevokeOneTimeCodeView = lazy(() => import("@views/Revoke/RevokeOneTimeCodeView"));
 const RevokeResetPasswordTokenView = lazy(() => import("@views/Revoke/RevokeResetPasswordTokenView"));
@@ -58,8 +48,6 @@ function App() {
                             <Router basename={getBasePath()}>
                                 <NotificationBar onClose={() => setNotification(null)} />
                                 <Routes>
-                                    <Route path={ResetPasswordStep1Route} element={<ResetPasswordStep1 />} />
-                                    <Route path={ResetPasswordStep2Route} element={<ResetPasswordStep2 />} />
                                     <Route path={LogoutRoute} element={<SignOut />} />
                                     <Route path={RevokeOneTimeCodeRoute} element={<RevokeOneTimeCodeView />} />
                                     <Route path={RevokeResetPasswordRoute} element={<RevokeResetPasswordTokenView />} />
@@ -72,8 +60,6 @@ function App() {
                                                 duoSelfEnrollment={getDuoSelfEnrollment()}
                                                 passkeyLogin={getPasskeyLogin()}
                                                 rememberMe={getRememberMe()}
-                                                resetPassword={getResetPassword()}
-                                                resetPasswordCustomURL={getResetPasswordCustomURL()}
                                             />
                                         }
                                     />
