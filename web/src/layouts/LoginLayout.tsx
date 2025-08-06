@@ -62,7 +62,7 @@ const LoginLayout = function (props: Props) {
     }, [fetchLocaleInformation]);
 
     useEffect(() => {
-        document.title = translate("Login - TEST");
+        document.title = translate("Login - Authelia");
     }, [translate]);
 
     return (
